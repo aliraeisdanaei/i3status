@@ -10,6 +10,7 @@
 general {
         colors = true
         interval = 5
+        separator = " "
 }
 
 
@@ -19,6 +20,8 @@ general {
 ##SECTION ORDERS                         ##
 ###########################################
 
+#order += "ipv6"
+order += "cpu_temperature 0"
 order += "wireless _first_"
 order += "ethernet _first_"
 order += "battery all"
@@ -30,8 +33,18 @@ order += "tztime local"
 ## SECTIONS                            ##
 ###########################################
 
+ipv6 {
+        format_up = "%ip"
+        format_down = "no IPv6"
+}
+
+cpu_temperature 0 {
+        format = "Core: %degrees °C "
+        max_threshold = 45
+}
+
 wireless _first_ {
-        format_up = "W: (%quality at %essid)"
+        format_up = "W: (%quality %bitrate at %essid)"
         format_down = "W: down"
 } 
 
