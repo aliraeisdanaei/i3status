@@ -21,17 +21,25 @@ general {
 ###########################################
 
 #order += "ipv6"
+
 order += "cpu_temperature 0"
 order += "wireless _first_"
 order += "ethernet _first_"
 order += "battery all"
 order += "volume master"
+order += "read_file BRIGHTNESS"
 order += "tztime local"
 
 
 ###########################################
 ## SECTIONS                            ##
 ###########################################
+
+read_file BRIGHTNESS {
+        format = "BRI %content"
+        path = "/home/aliraeis/.config/i3/scripts/.brightness"
+        max_characters = 5
+}
 
 ipv6 {
         format_up = "%ip"
