@@ -23,6 +23,7 @@ general {
 #order += "ipv6"
 
 order += "cpu_temperature 0"
+order += "load"
 order += "wireless _first_"
 order += "ethernet _first_"
 order += "battery all"
@@ -44,6 +45,10 @@ read_file BRIGHTNESS {
 ipv6 {
         format_up = "%ip"
         format_down = "no IPv6"
+}
+
+load {
+        format = "Load: %1min"
 }
 
 cpu_temperature 0 {
