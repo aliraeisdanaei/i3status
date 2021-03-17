@@ -22,6 +22,7 @@ general {
 
 #order += "ipv6"
 
+order += "read_file sensible"
 order += "cpu_temperature 0"
 order += "load"
 order += "wireless _first_"
@@ -35,6 +36,12 @@ order += "tztime local"
 ###########################################
 ## SECTIONS                            ##
 ###########################################
+
+read_file sensible {
+        format = "Sens: %content"
+        path = "/home/aliraeis/.config/i3/scripts/.sensible_on"
+        max_characters = 3
+}
 
 read_file BRIGHTNESS {
         format = "BRI %content"
