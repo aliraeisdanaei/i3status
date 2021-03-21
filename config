@@ -24,6 +24,7 @@ general {
 
 order += "read_file sensible"
 order += "cpu_temperature 0"
+order += "memory"
 order += "load"
 order += "wireless _first_"
 order += "ethernet _first_"
@@ -52,6 +53,11 @@ read_file BRIGHTNESS {
 ipv6 {
         format_up = "%ip"
         format_down = "no IPv6"
+}
+
+memory {
+    memory_used_method = "classical"
+    format = "%used"
 }
 
 load {
