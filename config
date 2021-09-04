@@ -30,7 +30,8 @@ order += "wireless _first_"
 order += "ethernet _first_"
 order += "battery all"
 order += "volume master"
-order += "read_file BRIGHTNESS"
+order += "read_file BRIGHTNESS_1"
+order += "read_file BRIGHTNESS_2"
 order += "tztime local"
 
 
@@ -44,9 +45,15 @@ read_file sensible {
         max_characters = 3
 }
 
-read_file BRIGHTNESS {
-        format = "BRI %content"
-        path = "/home/aliraeis/.config/i3/scripts/.brightness"
+read_file BRIGHTNESS_1 {
+        format = "BRI_1 %content"
+        path = "/home/aliraeis/.config/i3/scripts/.brightness_1"
+        max_characters = 5
+}
+
+read_file BRIGHTNESS_2 {
+        format = "BRI_2 %content"
+        path = "/home/aliraeis/.config/i3/scripts/.brightness_2"
         max_characters = 5
 }
 
