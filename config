@@ -22,6 +22,7 @@ general {
 
 #order += "ipv6"
 
+order += "read_file 20Timer"
 order += "cpu_temperature 0"
 order += "memory"
 order += "load"
@@ -35,8 +36,14 @@ order += "tztime local"
 
 
 ###########################################
-## SECTIONS                            ##
+## SECTIONS                              ##
 ###########################################
+
+read_file 20Timer {
+        format = "20Timer: %content"
+        path = "/home/aliraeis/.config/i3/scripts/.20Timer"
+        max_characters = 5
+}
 
 read_file BRIGHTNESS_1 {
         format = "BRI_1 %content"
