@@ -24,7 +24,7 @@ general {
 
 order += "read_file 20Timer"
 order += "cpu_temperature 0"
-order += "memory"
+# order += "memory"
 order += "load"
 order += "wireless _first_"
 order += "ethernet _first_"
